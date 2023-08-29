@@ -1,0 +1,60 @@
+body {
+    font-family: 'Acme', sans-serif;
+    font-size: 2.2em;
+}
+
+img {
+    width: 150px;
+    align-content: center;
+}
+
+.arriba {
+    color: white;
+    background-color:rgb(189, 15, 174);
+    height: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.abajo {
+    background-color: blue;
+    height: 100vh;
+}
+
+.contenido {
+    margin-top: 5%;
+}
+
+.abajo .contenido {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-usuario label {
+    margin-right: 5%;
+}
+
+.titulo {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.titulo p {
+    display: inline;
+}
+
+.boton {
+    font-size: 1.2em;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.row {
+    margin: 0;
+}

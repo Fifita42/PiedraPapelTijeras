@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.boton {
+    font-family: 'Acme', sans-serif;
+    text-align: center;
+    font-size: 2em;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.morado,
+.azul,
+.gris {
+    background-color: rgb(189, 15, 174);
+    height: 300px;
+}
+
+.morado,
+.azul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.morado_elecciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.vs {
+    background-color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 20px;
+    margin: 2% 20%;
+}
+
+.centro {
+    margin: 5%;
+}
+
+.seleccion {
+    background-color: transparent;
+    margin-right: 20px;
+}
+
+img {
+    height: 70px !important;
+}
+
+.row {
+    margin: 0;
+}
+
+.contenedor_imagen_seleccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nombrejugador {
+    color: white !important;
+    font-size: 2.2em !important;
+    margin-bottom: 10%;
+}

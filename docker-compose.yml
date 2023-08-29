@@ -1,0 +1,30 @@
+version: "3.1"
+services:
+  db:
+    container_name: basedatos
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+    volumes:
+      - persistent:/var/lib/mysql
+    networks:
+      - default
+  www:
+    container_name: paginaphp
+    build: .
+    image: piedrapapeltijera
+    ports:
+      - "80:80"
+    volumes:
+      - ./www:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - default
+volumes:
+  persistent:
+networks:
+  default:
