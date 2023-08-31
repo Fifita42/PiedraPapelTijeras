@@ -5,7 +5,9 @@ El programa se puede instalar fácilmente con un solo comando Docker que se ocup
 El comando es el siguiente:
 
 docker-compose up -d
-*NOTA:  recordar ubicar la consola en la ubicación del archivo llamado docker-compose.yml
+*NOTAS:  
+    - Recordar ubicar la consola en la ubicación del archivo llamado docker-compose.yml
+    - Se recomienda que la primera vez se esperen 5 segundos despues de que se hayan descargado e iniciado todos los recursos para evitar errores de creacion.
 
 Después de ejecutar el comando, se puede acceder al programa desde cualquier navegador web escribiendo localhost en la barra de direcciones. 
 Al entrar en la página principal, se puede introducir un nombre de usuario opcional que se mostrará en las tablas de clasificación al final de cada partida. 

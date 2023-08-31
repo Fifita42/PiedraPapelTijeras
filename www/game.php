@@ -1,14 +1,13 @@
-<?php
-    include("conexion.php");
-    
-    $sql="SELECT * FROM resultados";
-    $resultados=$conn->query($sql);
-    
-    $sql = "SELECT usuario FROM resultados ORDER BY id DESC LIMIT 1";
-    $result = $conn->query($sql);
-    
-    $usuario = (!empty(trim($_POST['usuario']))) ? htmlspecialchars($_POST['usuario']) : (mysqli_fetch_row($result)[0] ?? "Usuario"); 
-?>
+    <?php
+        include("conexion.php");
+        $sql="SELECT * FROM resultados";
+        $resultados=$conn->query($sql);
+        
+        $sql = "SELECT usuario FROM resultados ORDER BY id DESC LIMIT 1";
+        $result = $conn->query($sql);
+        
+        $usuario = (!empty(trim($_POST['usuario']))) ? htmlspecialchars($_POST['usuario']) : (mysqli_fetch_row($result)[0] ?? "Usuario"); 
+    ?>
 <html>
 <head>
     <meta charset="UTF-8">

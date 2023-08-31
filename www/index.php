@@ -1,4 +1,3 @@
-<?php include("crear.php") ?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -35,7 +34,6 @@
         </div>
     </section>
     <script>
-        <?include("conexion.php");?>
         $(".boton").click(()=>window.location="game.php");
     </script>
 </body>
