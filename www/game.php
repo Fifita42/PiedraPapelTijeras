@@ -7,7 +7,7 @@
     $sql = "SELECT usuario FROM resultados ORDER BY id DESC LIMIT 1";
     $result = $conn->query($sql);
     
-    $usuario = (!empty($_POST['usuario'])) ? $_POST['usuario'] : (mysqli_fetch_row($result)[0] ?? "usuario"); 
+    $usuario = (!empty(trim($_POST['usuario']))) ? htmlspecialchars($_POST['usuario']) : (mysqli_fetch_row($result)[0] ?? "Usuario"); 
 ?>
 <html>
 <head>
@@ -22,51 +22,39 @@
     <script src="./scripts/jquery.js"></script>
 </head>
 <body>
-    <section class="row">
-        <form class="col-12 form-inline" id="formulario" method="post">
-            <div class="col-md-4 col-sm-12 morado">
-                <div class="nombrejugador">
-                    <img src="img/maquina.png"alt="">
-                    <?php 
-                        echo "$usuario";
-                    ?>
-                </div>
-                <div class="morado_elecciones">
-                    <select class="seleccion form-control form-control-lg" id="jugador1" name="jugador1">
-                        <option>Selecciona</option>
-                        <option value="piedra">Piedra</option>
-                        <option value="papel">Papel</option>
-                        <option value="tijera">Tijera</option>
-                    </select>
-                    <div class="contenedor_imagen_seleccion">
-                        <img src="img/piedra.png" id="imagen_selecion_jugador1" alt="">
-                    </div> 
-                </div>
+    <div class="row fondo">
+        <div class="row-12 d-flex contenedor-jugadores">
+            <div class="nombrejugador">
+                <img src="img/maquina.png">
+                <?php echo "$usuario";?>
             </div>
-    
-            <div class="col-md-4 col-sm-12 gris">
-                <div class="centro">
-                    <div class="vs resultado-ganar-perder">VS</div>
-                    <div class="boton" id="boton" onclick="verificar()">JUGAR</div>
+            <div class="nombrejugador partida">0/3</div>
+            <div class="nombrejugador">Máquina <img src="img/maquina.png"alt=""></div>
+        </div>
+        <div class="row contenedor-jugador">
+
+            <div class="col-6 d-flex justify-content-center"><img class="jugador jugador1" src="img/piedra.png" alt=""></div>
+            
+            <div class="contenedor-final">
+                <div class="contenedor-final_final">
+                    <h3 class="resultadofinal"></h3>
+                    <<input type="button" class="reiniciar-boton no-ver" value="Otra vez">
+                    
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-12 azul">
-                <div class="nombrejugador">
-                    Maquina
-                    <img src="img/maquina.png"alt="">
-                </div>
-                <div class="contenedor_imagen_seleccion">
-                    <img src="img/piedra.png" class="piedra" id="imagen_selecion_jugador2" alt="">
-                    <img src="img/papel.png" class="papel" id="imagen_selecion_jugador2" alt="">
-                    <img src="img/tijera.png" class="tijera" id="imagen_selecion_jugador2" alt="">
-                </div> 
-            </div>
-        </form>
-    </section>
+            <div class="col-6 d-flex justify-content-center"><img class="jugador jugador2" src="img/piedra.png" alt=""></div>
 
-    <?php include("tabla.php")?>
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/validar.js"></script>
+        </div>
+        <input type="hidden" id="jugador1" name="jugador1" value="">
+        <div  class="contenedor_imagen_seleccion">
+            <img src="img/piedra.png" name="piedra" class="opcion" onclick="document.getElementById('jugador1').value=event.target.name;verificar()">
+            <img src="img/papel.png" name="papel" class="opcion" onclick="document.getElementById('jugador1').value=event.target.name;verificar()">
+            <img src="img/tijera.png" name="tijera" class="opcion" onclick="document.getElementById('jugador1').value=event.target.name;verificar()">
+        </div>
+        <?php include("tabla.php")?>
+    </div>
 </body>
+<script src="./scripts/script.js"></script>
+<script src="./scripts/validar.js"></script>
 </html>

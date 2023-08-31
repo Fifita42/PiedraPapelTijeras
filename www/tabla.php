@@ -1,5 +1,4 @@
-<section class="row">
-    <div class="col-md-12">
+<section class="">
         <table class="table table-striped text-center">
             <thead>
                 <tr>
@@ -24,5 +23,4 @@
             </tbody>
         </table>
         <button class="borrar btn btn-primary btn-lg btn-block">Borrar puntuaciones</button>
-    </div>
 </section>

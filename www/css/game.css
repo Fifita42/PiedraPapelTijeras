@@ -1,8 +1,76 @@
-body {
+*{
     margin: 0;
-    overflow-x: hidden;
+    padding: 0;
 }
 
+.row{
+    margin:0px !important;
+}
+.fondo{
+    background-color: black;
+}
+.opcion{
+    height: 75px;
+}
+
+.seleccionado,.opcion:hover{
+    height: 100px;
+    border: 1px solid purple;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.nombrejugador {
+    color: white !important;
+    font-size: 2.2em !important;
+    padding: 30px 10px;
+}
+.nombrejugador img{
+    height: 100px;
+}
+.contenedor-jugadores{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.contenedor-jugador{
+    margin-top: 5%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.contenedor-jugador img{
+    height: 200;
+}
+.jugador2 {
+    transform: scaleX(-1);
+}
+
+.contenedor_imagen_seleccion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    height: 100px;
+}
+img{
+    -user-drag: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+}
+.no-ver{
+    display: none;
+}
+.reiniciar-boton{
+    color: white;
+    width: 120px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+}
 .boton {
     font-family: 'Acme', sans-serif;
     text-align: center;
@@ -15,63 +83,31 @@ body {
     border: 2px solid white;
     cursor: pointer;
 }
-
-.morado,
-.azul,
-.gris {
-    background-color: rgb(189, 15, 174);
-    height: 300px;
+.resultadofinal{
+    color: white;
+    width: 120px;
+    height: 50px;
+    margin-bottom: 100px;
+    margin-left: 20px;
 }
-
-.morado,
-.azul {
+.contenedor-final{
     display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: centers;
+}
+.contenedor-final_final{
+    display: flex;
+    position: absolute;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
-
-.morado_elecciones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.vs {
-    background-color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 2em;
-    padding: 20px;
-    margin: 2% 20%;
-}
-
-.centro {
-    margin: 5%;
-}
-
-.seleccion {
-    background-color: transparent;
-    margin-right: 20px;
-}
-
-img {
-    height: 70px !important;
-}
-
-.row {
+.contenedor-final_final h3{
     margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: center;
 }
-
-.contenedor_imagen_seleccion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nombrejugador {
-    color: white !important;
-    font-size: 2.2em !important;
-    margin-bottom: 10%;
+.table{
+    margin-top: 50px;
+    border-radius: 30px;
 }

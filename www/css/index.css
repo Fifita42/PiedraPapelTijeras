@@ -6,11 +6,15 @@ body {
 img {
     width: 150px;
     align-content: center;
+    -user-drag: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
 }
 
 .arriba {
     color: white;
-    background-color:rgb(189, 15, 174);
+    background-color:black;
     height: 400px;
     width: 100%;
     text-align: center;
@@ -18,7 +22,7 @@ img {
 
 .abajo {
     background-color: blue;
-    height: 100vh;
+    height: 50vh;
 }
 
 .contenido {
@@ -32,6 +36,9 @@ img {
 
 .contenedor-usuario label {
     margin-right: 5%;
+}
+.usuario{
+    padding-left: 10px;
 }
 
 .titulo {
