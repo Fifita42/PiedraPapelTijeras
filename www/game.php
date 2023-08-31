@@ -22,12 +22,15 @@
 </head>
 <body>
     <div class="row fondo">
+        <button class="back-button" onclick="goBack()">←</button>
         <div class="row-12 d-flex contenedor-jugadores">
             <div class="nombrejugador">
                 <img src="img/maquina.png">
                 <?php echo "$usuario";?>
             </div>
+
             <div class="nombrejugador partida">0/3</div>
+
             <div class="nombrejugador">Máquina <img src="img/maquina.png"alt=""></div>
         </div>
         <div class="row contenedor-jugador">
@@ -37,7 +40,7 @@
             <div class="contenedor-final">
                 <div class="contenedor-final_final">
                     <h3 class="resultadofinal"></h3>
-                    <<input type="button" class="reiniciar-boton no-ver" value="Otra vez">
+                    <input type="button" class="reiniciar-boton no-ver" value="Otra vez">
                     
                 </div>
             </div>

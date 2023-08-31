@@ -111,3 +111,19 @@ img{
     margin-top: 50px;
     border-radius: 30px;
 }
+.back-button {
+    position: sticky;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    max-width: 45px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}

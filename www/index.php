@@ -15,7 +15,7 @@
             <div class="contenido">
                 <div class="contenedor-usuario">
                     <label for="usuario">Nombre:</label>
-                    <input type="text" class="usuario" name="usuario" id="usuario" placeholder="Usuario">
+                    <input type="text" class="usuario" name="usuario" id="usuario" maxlength="10" placeholder="Usuario">
                 </div>
                 <div class="titulo">
                     <p>Piedra</p><p>Papel</p><p>Tijera</p>

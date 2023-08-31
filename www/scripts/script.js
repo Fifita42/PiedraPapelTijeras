@@ -67,3 +67,6 @@ $(".borrar").click(()=> window.location = "eliminar.php");
 
 //reiniciar juego
 $(".reiniciar-boton").click(()=>window.location = "game.php");
+function goBack(){
+    window.location = "index.php"
+}
