@@ -10,12 +10,14 @@
     <script src="./scripts/jquery.js"></script>
 </head>
 <body>
-    <form class="row" action="game.php" method="POST">
+
+    <form class="row" method="POST" action="game.php" id="form">
         <div class="col-12 arriba">
             <div class="contenido">
                 <div class="contenedor-usuario">
                     <label for="usuario">Nombre:</label>
                     <input type="text" class="usuario" name="usuario" id="usuario" maxlength="10" placeholder="Usuario">
+                    <div class="loader nover"></div>
                 </div>
                 <div class="titulo">
                     <p>Piedra</p><p>Papel</p><p>Tijera</p>
@@ -24,6 +26,7 @@
             </div>
         </div>
     </form>
+
     <section class="row">
         <div class="col-12 abajo">
             <div class="contenido">
@@ -33,8 +36,26 @@
             </div>
         </div>
     </section>
-    <script>
-        $(".boton").click(()=>window.location="game.php");
-    </script>
+
+<script>
+    document.getElementById("form").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    document.querySelector(".loader").classList.remove("nover");
+    
+    const formData = new FormData(event.target);
+
+    const response = await fetch("./conexiones/verificarusuario.php", {
+        method: "POST",
+        body: formData
+    });
+
+    const data = await response.text();
+
+    if (data !== "ok") alert(data);
+    else event.target.submit();
+    
+});
+
+</script>
 </body>
 </html>

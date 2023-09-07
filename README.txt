@@ -11,7 +11,8 @@ docker-compose up -d
 
 Después de ejecutar el comando, se puede acceder al programa desde cualquier navegador web escribiendo localhost en la barra de direcciones. 
 Al entrar en la página principal, se puede introducir un nombre de usuario opcional que se mostrará en las tablas de clasificación al final de cada partida. 
-Si no se introduce ningún nombre, el usuario se llamará por defecto Usuario. Al pulsar el botón START, se inicia el juego.
+Si no se introduce ningún nombre, el usuario se llamará por defecto Usuario más algún numero. Los nombres de usuario deben ser unicos.
+Al pulsar el botón START, se inicia el juego.
 
 El juego consiste en elegir entre piedra, papel o tijera en cada jugada y competir contra la máquina, que elegirá según un algoritmo que no hará fácil el juego. 
 

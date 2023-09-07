@@ -16,7 +16,7 @@ function verificar() {
     //cambiar imagen de las manos
     $(".jugador1").attr("src",`./img/${document.getElementById("jugador1").value}.png`).css("display", "none").fadeIn(500);
     $(".jugador2").attr("src",`./img/${jugadadelamaquina[jugadadelamaquina.length-1]}.png`).css("display", "none").fadeIn(500);
-
+   
     //enviar la jugada y evaluar quien gana
     const response = validar(jugadadelamaquina);
     
@@ -45,8 +45,7 @@ function verificar() {
         };
 
         //subir si gano o no y todas las jugadas que hizo
-        fetch('solucion.php',
-            {
+        fetch('solucion.php',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -54,8 +53,7 @@ function verificar() {
                 body: JSON.stringify(data)
             });
 
-            $textoResultado = $(".resultadofinal");
-            $textoResultado.text(response.resultado).css("display", "none").fadeIn(500);
+            $(".resultadofinal").text(response.resultado).css("display", "none").fadeIn(500);
             $(".reiniciar-boton").fadeIn(500);
             $textoResultado.text(ganoPerdio + "!");
 
@@ -66,7 +64,6 @@ function verificar() {
 $(".borrar").click(()=> window.location = "eliminar.php");
 
 //reiniciar juego
-$(".reiniciar-boton").click(()=>window.location = "game.php");
 function goBack(){
     window.location = "index.php"
 }

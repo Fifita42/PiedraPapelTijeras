@@ -1,13 +1,9 @@
-    <?php
-        include("conexion.php");
-        $sql="SELECT * FROM resultados";
-        $resultados=$conn->query($sql);
-        
-        $sql = "SELECT usuario FROM resultados ORDER BY id DESC LIMIT 1";
-        $result = $conn->query($sql);
-        
-        $usuario = (!empty(trim($_POST['usuario']))) ? htmlspecialchars($_POST['usuario']) : (mysqli_fetch_row($result)[0] ?? "Usuario"); 
-    ?>
+<?php
+include("./conexiones/conexion.php");
+$resultados = $conn->query("SELECT * FROM resultados");
+$totalUsuarios = $conn->query("SELECT COUNT(id) FROM resultados")->fetch_row()[0];
+$usuario = trim(!empty($_POST['usuario']) ? htmlspecialchars($_POST['usuario']) : "Usuario " . ($totalUsuarios + 1));
+?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -40,8 +36,7 @@
             <div class="contenedor-final">
                 <div class="contenedor-final_final">
                     <h3 class="resultadofinal"></h3>
-                    <input type="button" class="reiniciar-boton no-ver" value="Otra vez">
-                    
+                    <input type="button" class="reiniciar-boton no-ver" value="Otra vez" onclick="goBack()">
                 </div>
             </div>
 
